@@ -664,7 +664,7 @@ function CaseScreen({cases,modLabel,modColor,onDone,onBack}){
   const rev=sel!==null;
   const pick=i=>{if(rev)return;setSel(i);if(i===q.sc)setScore(s=>s+1);};
   const next=()=>{if(qi<cases.length-1){setQi(i=>i+1);setSel(null);}else setDone(true);};
-  if(done)return<DoneScreen modName={cases[0].modName} score={score} total={cases.length} onNext={()=>onDone(score)} onRetry={()=>{setQi(0);setSel(null);setScore(0);setDone(false);}} nextLabel="Continue" color={modColor}/>;
+  if(done)return<Done level={modLabel} score={score} total={cases.length} onNext={()=>onDone(score)} onRetry={()=>{setQi(0);setSel(null);setScore(0);setDone(false);}} nextLabel="Continue" color={modColor}/>;
   return(
     <div className="min-h-screen p-5 flex flex-col" style={{background:"linear-gradient(160deg,#0a0614,#0d0d1a)"}}>
       <style>{CSS2}</style>
